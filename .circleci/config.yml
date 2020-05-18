@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.16.3
+    branches:
+        only:
+          - develop
     steps:
     - checkout
     - run: npm install
@@ -12,12 +15,6 @@ jobs:
            echo 'Hello World!'
            echo 'This is the delivery pipeline'
     - run:
-         name: test1
-         command: |
-           echo 'test1'
-           pwd
-           ls
-    - run:
         name: run example test
         # working_directory: ~/circleci-vue1
-        command: cd ~/project | npx vue-cli-service test:unit example.spec.js
+        command: npx vue-cli-service test:unit example.spec.js
