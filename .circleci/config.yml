@@ -4,6 +4,7 @@ jobs:
     docker:
       - image: circleci/node:12.16.3
     steps:
+    - checkout
     - run:
          name: 最初の一歩
          command: |
