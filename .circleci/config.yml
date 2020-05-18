@@ -17,5 +17,5 @@ jobs:
            pwd
     - run:
         name: run example test
-        working_directory: ~/circleci-vue1
-        command: npx vue-cli-service test:unit example.spec.js
+        # working_directory: ~/circleci-vue1
+        command: cd ~/project | npx vue-cli-service test:unit example.spec.js
