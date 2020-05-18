@@ -15,6 +15,7 @@ jobs:
          command: |
            echo 'test1'
            pwd
+           ls
     - run:
         name: run example test
         # working_directory: ~/circleci-vue1
