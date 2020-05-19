@@ -10,11 +10,7 @@ jobs:
     - checkout
     - run: npm install
     - run:
-         name: 最初の一歩
-         command: |
-           echo 'Hello World!'
-           echo 'This is the delivery pipeline'
-    - run:
         name: run example test
         # working_directory: ~/circleci-vue1
-        command: npx vue-cli-service test:unit example.spec.js
+        # command: npx vue-cli-service test:unit example.spec.js
+        command: npx vue-cli-service test:unit HelloCircleCI.vue.spec.js
