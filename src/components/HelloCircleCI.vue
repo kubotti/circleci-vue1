@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    This is a test file for CircleCI.
+    <h3>This is a test file for CircleCI.</h3>
     <div>
     <p>{{ greeting }}</p>
     <input id="username" v-model="username" />
@@ -24,6 +24,7 @@ export default {
   },
   methods: {
     click1: function () {
+      console.log("click1 clicked.")
       this.greeting = 'Hello, ' + this.username
     },
   },

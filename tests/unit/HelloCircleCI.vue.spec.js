@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import HelloCircleCI from '@/components/HelloCircleCI.vue'
 
 describe('HelloCircleCI.vue', () => {
@@ -9,20 +9,30 @@ describe('HelloCircleCI.vue', () => {
     })
     expect(wrapper.text()).toMatch(msg)
   })
+
   it('renders greeting when click here button clicked', () => {
     const msg = 'new message'
     const expected_greeting = 'Hello, circleci'
-    const wrapper = shallowMount(HelloCircleCI, {
+    const wrapper = mount(HelloCircleCI, {
       propsData: { msg }
     })
-    // wrapper.find("#username").setValue('circleci')
 
-    // expect(wrapper.find("#username").instance().value).toMatch("circleci1")
+    expect(wrapper.find("h1").text()).toMatch(msg)
+
+    let input_text = 'circleciaaa'
+    wrapper.find("input").setValue(input_text)
+    //console.log(wrapper.find("input").html())
+    //expect(wrapper.find("#username").text()).toMatch("circleci1")
+    expect(wrapper.vm.username).toMatch(input_text)
 
     let b1 = wrapper.find("button")
     expect(b1.text()).toMatch("Click here")
     //b1.trigger('click')
     wrapper.find("button").trigger('click')
-    expect(wrapper.find("p").text()).toMatch(expected_greeting)
+
+    //expect(wrapper.find("p").text()).toMatch(expected_greeting)
+    expect(wrapper.vm.greeting).toMatch(expected_greeting)
+
+
   })
 })
