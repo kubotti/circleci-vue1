@@ -10,7 +10,7 @@ jobs:
     - checkout
     - run: npm install
     - run:
-        name: run example test
+        name: run click event test
         # working_directory: ~/circleci-vue1
         # command: npx vue-cli-service test:unit example.spec.js
         command: npx vue-cli-service test:unit HelloCircleCI.vue.spec.js

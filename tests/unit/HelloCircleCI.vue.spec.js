@@ -10,7 +10,7 @@ describe('HelloCircleCI.vue', () => {
     expect(wrapper.text()).toMatch(msg)
   })
 
-  it('renders greeting when click here button clicked', async () => {
+  it('change greeting message when click here button clicked', async () => {
     const msg = 'new message'
     const expected_greeting = 'Hello, circleci'
     const wrapper = mount(HelloCircleCI, {
