@@ -3,8 +3,8 @@
     <h1>{{ msg }}</h1>
     This is a test file for CircleCI.
     <div>
-    <p>{{ message }}</p>
-    <input v-model="message" />
+    <p>{{ greeting }}</p>
+    <input v-model="name" />
     <button v-on:click="click1()">Click here</button>
     </div>
   </div>
@@ -18,12 +18,13 @@ export default {
   },
   data: function () {
     return {
-      message: 'Hello Vue.js!',
+      name: 'kubotti',
+      greeting: 'Hello',
     }
   },
   methods: {
     click1: function () {
-      this.message = this.message.split('').reverse().join('')
+      this.greeting = 'Hello, ' + this.name
     },
   },
 }
