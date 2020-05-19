@@ -4,7 +4,7 @@
     This is a test file for CircleCI.
     <div>
     <p>{{ greeting }}</p>
-    <input v-model="name" />
+    <input id="username" v-model="username" />
     <button v-on:click="click1()">Click here</button>
     </div>
   </div>
@@ -18,13 +18,13 @@ export default {
   },
   data: function () {
     return {
-      name: 'kubotti',
+      username: 'kubotti',
       greeting: 'Hello',
     }
   },
   methods: {
     click1: function () {
-      this.greeting = 'Hello, ' + this.name
+      this.greeting = 'Hello, ' + this.username
     },
   },
 }
