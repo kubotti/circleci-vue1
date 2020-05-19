@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     click1: function () {
-      console.log("click1 clicked.")
+      //console.log("click1 clicked.")
       this.greeting = 'Hello, ' + this.username
     },
   },

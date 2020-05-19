@@ -10,16 +10,14 @@ describe('HelloCircleCI.vue', () => {
     expect(wrapper.text()).toMatch(msg)
   })
 
-  it('renders greeting when click here button clicked', () => {
+  it('renders greeting when click here button clicked', async () => {
     const msg = 'new message'
     const expected_greeting = 'Hello, circleci'
     const wrapper = mount(HelloCircleCI, {
       propsData: { msg }
     })
 
-    expect(wrapper.find("h1").text()).toMatch(msg)
-
-    let input_text = 'circleciaaa'
+    let input_text = 'circleci'
     wrapper.find("input").setValue(input_text)
     //console.log(wrapper.find("input").html())
     //expect(wrapper.find("#username").text()).toMatch("circleci1")
@@ -30,8 +28,10 @@ describe('HelloCircleCI.vue', () => {
     //b1.trigger('click')
     wrapper.find("button").trigger('click')
 
-    //expect(wrapper.find("p").text()).toMatch(expected_greeting)
-    expect(wrapper.vm.greeting).toMatch(expected_greeting)
+    await wrapper.vm.$nextTick();
+    console.log(wrapper.find("p").text())
+    expect(wrapper.find("p").text()).toBe(expected_greeting)
+    //expect(wrapper.vm.greeting).toMatch(expected_greeting)
 
 
   })
