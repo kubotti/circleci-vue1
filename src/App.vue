@@ -1,17 +1,17 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloCircleCI msg="Welcome to Your CircleCI Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloCircleCI from './components/HelloCircleCI.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloCircleCI
   }
 }
 </script>
