@@ -14,3 +14,15 @@ jobs:
         # working_directory: ~/circleci-vue1
         # command: npx vue-cli-service test:unit example.spec.js
         command: npx vue-cli-service test:unit HelloCircleCI.vue.spec.js
+  deploy:
+    filters:
+      branches:
+        only: develop
+    docker:
+      - image: buildpack-deps:trusty
+    steps:
+      - checkout
+      - run:
+          name: Develop を Heroku にデプロイ
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git develop
